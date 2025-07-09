@@ -1,0 +1,84 @@
+import React from "react";
+import { motion } from "framer-motion";
+
+const dayWiseSchedule = {
+  "DAY 1": [
+    { time: "9:00 AM – 10:00 AM", activity: "Inauguration and Registration" },
+    { time: "10:00 AM – 1:30 PM", activity: "Code Contest Level 1: Byte Size Battles" },
+    { time: "1:30 PM – 2:30 PM", activity: "Lunch" },
+    { time: "2:30 PM – 3:30 PM", activity: "Code Contest Level 2" },
+    { time: "3:30 PM – 5:00 PM", activity: "Code Contest Level 3" },
+    { time: "5:00 PM – 5:30 PM", activity: "DJ" },
+    { time: "5:30 PM – 6:00 PM", activity: "Results Announcement" },
+    { time: "6:00 PM – 6:30 PM", activity: "Project Allocation" },
+    { time: "6:30 PM – 8:30 PM", activity: "Problem Solving & Logical Thinking" },
+    { time: "8:30 PM – 9:30 PM", activity: "Running Dinner" },
+    { time: "9:30 PM – 10:30 PM", activity: "Presentations" },
+    { time: "10:30 PM – 12:00 AM", activity: "Working Time" },
+  ],
+  "DAY 2": [
+    { time: "12:00 AM – 12:45 AM", activity: "Campfire" },
+    { time: "12:45 AM – 3:30 AM", activity: "Working Time" },
+    { time: "3:30 AM – 4:00 AM", activity: "Break + DJ" },
+    { time: "4:00 AM – 6:00 AM", activity: "Work Submission" },
+    { time: "6:00 AM – 7:00 AM", activity: "Fresh Up + Nap" },
+    { time: "7:00 AM – 9:00 AM", activity: "Final Presentations + Breakfast" },
+    { time: "9:00 AM – 10:00 AM", activity: "Closing Ceremony" },
+  ],
+};
+
+const TimelineSection = () => {
+  return (
+    <section
+      id="timeline"
+      className="min-h-screen bg-gradient-to-br from-black via-[#0f172a] to-[#020617] px-4 py-20 flex flex-col items-center"
+    >
+      <motion.div
+        className="w-[75%] text-white font-orbitron"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-4xl md:text-5xl font-bold text-cyan-400 text-center mb-12">
+          Event Schedule
+        </h2>
+
+        <div className="space-y-12">
+          {Object.entries(dayWiseSchedule).map(([day, events], idx) => (
+            <motion.div
+              key={idx}
+              className="bg-[#0f172a] border border-gray-700 rounded-2xl p-8 shadow-md"
+              initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: idx * 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl md:text-3xl font-semibold text-purple-400 mb-6 text-center">
+                {day}
+              </h3>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4 text-sm md:text-base text-gray-300">
+                {events.map((event, i) => (
+                  <motion.div
+                    key={i}
+                    className="flex flex-col bg-[#1e293b] rounded-md p-4 border border-gray-600 hover:border-cyan-400 transition duration-300"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: i * 0.05 }}
+                    viewport={{ once: true }}
+                  >
+                    <span className="text-cyan-300 font-medium">{event.time}</span>
+                    <span>{event.activity}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </section>
+  );
+};
+
+export default TimelineSection;
