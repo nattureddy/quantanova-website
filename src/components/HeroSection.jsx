@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const calculateTimeLeft = () => {
-    const target = new Date('2025-07-19T10:00:00');
+    const target = new Date("2025-07-19T10:00:00");
     const now = new Date();
     const difference = target - now;
 
@@ -30,7 +30,7 @@ const HeroSection = () => {
       className="bg-[#111827] border border-gray-700 rounded-xl px-6 py-4 w-24 md:w-28 text-center"
     >
       <p className="text-3xl md:text-4xl font-bold text-cyan-400">
-        {value.toString().padStart(2, '0')}
+        {value.toString().padStart(2, "0")}
       </p>
       <p className="text-sm text-gray-400 mt-1">{label}</p>
     </motion.div>
@@ -39,16 +39,16 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen bg-gradient-to-br from-black via-[#0f172a] to-[#020617] flex items-center justify-center px-4 font-orbitron"
+      className="min-h-screen bg-gradient-to-br from-black via-[#0f172a] to-[#020617] px-4 pt-28 flex items-center justify-center font-orbitron"
     >
       <motion.div
-        className="bg-[#0f172a] border border-gray-700 rounded-2xl text-white w-[75%] px-10 py-14 text-center"
+        className="bg-[#0f172a] border border-gray-700 rounded-2xl text-white w-full max-w-5xl px-6 md:px-10 py-12 text-center"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
       >
         <motion.h1
-          className="text-5xl md:text-6xl font-extrabold text-cyan-400 tracking-wide"
+          className="text-4xl md:text-6xl font-extrabold text-cyan-400 tracking-wide"
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
@@ -57,7 +57,7 @@ const HeroSection = () => {
         </motion.h1>
 
         <motion.p
-          className="mt-4 text-xl md:text-2xl text-gray-200 italic"
+          className="mt-4 text-lg md:text-2xl text-gray-200 italic"
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
@@ -71,13 +71,15 @@ const HeroSection = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          Welcome to the ultimate student hackathon where creativity and coding collide.
-          Compete, collaborate, and create your legacy with Quantanova!
+          Welcome to the ultimate student hackathon where creativity and coding
+          collide. Compete, collaborate, and create your legacy with Quantanova!
         </motion.p>
 
         {/* Countdown Timer */}
         <div className="mt-10">
-          <h3 className="text-lg text-cyan-300 font-semibold mb-4">Event Countdown</h3>
+          <h3 className="text-lg text-cyan-300 font-semibold mb-4">
+            Event Countdown
+          </h3>
           <div className="flex justify-center gap-4 flex-wrap">
             {countdownItem("DAYS", timeLeft.days)}
             {countdownItem("HOURS", timeLeft.hours)}
