@@ -27,12 +27,12 @@ const HeroSection = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="bg-[#111827] border border-gray-700 rounded-xl px-6 py-4 w-24 md:w-28 text-center"
+      className="bg-[#111827] border border-gray-700 rounded-xl px-4 py-4 min-w-[72px] sm:min-w-[90px] text-center flex flex-col items-center"
     >
-      <p className="text-3xl md:text-4xl font-bold text-cyan-400">
+      <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-cyan-400">
         {value.toString().padStart(2, "0")}
       </p>
-      <p className="text-sm text-gray-400 mt-1">{label}</p>
+      <p className="text-xs sm:text-sm text-gray-400 mt-1">{label}</p>
     </motion.div>
   );
 
@@ -80,7 +80,7 @@ const HeroSection = () => {
           <h3 className="text-lg text-cyan-300 font-semibold mb-4">
             Event Countdown
           </h3>
-          <div className="flex justify-center gap-4 flex-wrap">
+          <div className="flex justify-center gap-3 sm:gap-4 flex-wrap max-w-full">
             {countdownItem("DAYS", timeLeft.days)}
             {countdownItem("HOURS", timeLeft.hours)}
             {countdownItem("MINUTES", timeLeft.minutes)}

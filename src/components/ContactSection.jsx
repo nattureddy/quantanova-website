@@ -21,28 +21,25 @@ const ContactSection = () => {
         </h2>
 
         <div className="rounded-2xl p-8 shadow-xl backdrop-blur-md bg-white/10 border border-white/20 text-gray-300 space-y-6">
-          {/* Contact Info Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <MdPhone className="text-cyan-400 text-xl" />
-                <span className="text-lg">
-                  9347316441 - <span className="text-white font-medium">Sanketh</span>
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <MdEmail className="text-cyan-400 text-xl" />
-                <span className="text-lg">sankethreddyanupala@gmail.com</span>
-              </div>
+          {/* Contact Info - Cleaned Layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="flex items-center gap-3">
+              <MdPhone className="text-cyan-400 text-xl" />
+              <span className="text-lg">
+                9347316441 - <span className="text-white font-medium">Sanketh</span>
+              </span>
             </div>
 
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <MdPhone className="text-cyan-400 text-xl" />
-                <span className="text-lg">
-                  9876543210 - <span className="text-white font-medium">Harsha</span>
-                </span>
-              </div>
+            <div className="flex items-center gap-3">
+              <MdPhone className="text-cyan-400 text-xl" />
+              <span className="text-lg">
+                9876543210 - <span className="text-white font-medium">Harsha</span>
+              </span>
+            </div>
+
+            <div className="flex items-center gap-3 sm:col-span-2">
+              <MdEmail className="text-cyan-400 text-xl" />
+              <span className="text-lg">sankethreddyanupala@gmail.com</span>
             </div>
           </div>
 
