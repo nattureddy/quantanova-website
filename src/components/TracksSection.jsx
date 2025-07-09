@@ -8,7 +8,7 @@ const TracksSection = () => {
       className="min-h-screen bg-gradient-to-br from-black via-[#0f172a] to-[#020617] px-4 py-20 flex flex-col items-center font-orbitron"
     >
       <motion.div
-        className="w-[75%] text-white"
+        className="w-full max-w-6xl text-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -19,14 +19,15 @@ const TracksSection = () => {
         </h2>
 
         <motion.div
-          className="bg-[#0f172a] border border-gray-700 rounded-2xl p-8 md:p-10 text-center shadow-md"
+          className="bg-[#0f172a] border border-gray-700 rounded-2xl p-6 md:p-10 text-center shadow-md"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
           viewport={{ once: true }}
         >
           <p className="text-lg md:text-xl text-gray-300 leading-8 mb-4">
-            Participants will receive <span className="text-purple-400 font-semibold">real-world problem statements</span> during the event day.
+            Participants will receive{" "}
+            <span className="text-purple-400 font-semibold">real-world problem statements</span> during the event day.
           </p>
 
           <p className="text-lg md:text-xl text-gray-300 leading-8 mb-6">

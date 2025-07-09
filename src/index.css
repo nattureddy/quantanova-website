@@ -7,6 +7,10 @@
 @import "@fontsource/rubik/700.css"; /* Bold */
 @import "@fontsource/orbitron";
 
+body {
+  overflow-x: hidden;  /* Prevent horizontal scroll */
+}
+
 
 html {
   scroll-behavior: smooth;

@@ -31,10 +31,10 @@ const TimelineSection = () => {
   return (
     <section
       id="timeline"
-      className="min-h-screen bg-gradient-to-br from-black via-[#0f172a] to-[#020617] px-4 py-20 flex flex-col items-center"
+      className="min-h-screen bg-gradient-to-br from-black via-[#0f172a] to-[#020617] px-4 py-20 flex flex-col items-center font-orbitron"
     >
       <motion.div
-        className="w-[75%] text-white font-orbitron"
+        className="w-full max-w-6xl text-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -58,18 +58,18 @@ const TimelineSection = () => {
                 {day}
               </h3>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4 text-sm md:text-base text-gray-300">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {events.map((event, i) => (
                   <motion.div
                     key={i}
-                    className="flex flex-col bg-[#1e293b] rounded-md p-4 border border-gray-600 hover:border-cyan-400 transition duration-300"
+                    className="flex flex-col bg-[#1e293b] rounded-lg p-4 border border-gray-600 hover:border-cyan-400 transition duration-300"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: i * 0.05 }}
+                    transition={{ duration: 0.5, delay: i * 0.05 }}
                     viewport={{ once: true }}
                   >
-                    <span className="text-cyan-300 font-medium">{event.time}</span>
-                    <span>{event.activity}</span>
+                    <span className="text-cyan-300 font-semibold">{event.time}</span>
+                    <span className="text-gray-200 mt-1">{event.activity}</span>
                   </motion.div>
                 ))}
               </div>

@@ -10,7 +10,7 @@ const ContactSection = () => {
       className="min-h-screen bg-gradient-to-br from-black via-[#0f172a] to-[#020617] px-4 py-20 flex flex-col items-center font-orbitron"
     >
       <motion.div
-        className="w-[75%] text-white"
+        className="w-full max-w-4xl text-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}

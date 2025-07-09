@@ -5,10 +5,10 @@ const PrizesSection = () => {
   return (
     <section
       id="prizes"
-      className="min-h-screen bg-gradient-to-br from-black via-[#0f172a] to-[#020617] px-4 py-20 flex flex-col items-center"
+      className="min-h-screen bg-gradient-to-br from-black via-[#0f172a] to-[#020617] px-4 py-20 flex flex-col items-center font-orbitron"
     >
       <motion.div
-        className="w-[75%] text-white font-orbitron"
+        className="w-full max-w-6xl text-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -18,7 +18,8 @@ const PrizesSection = () => {
           Prizes & Recognition
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-6 text-center">
+        {/* Top Prizes */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
           {/* 1st Prize */}
           <motion.div
             className="bg-[#0f172a] border border-cyan-700 rounded-2xl p-6 shadow-md hover:scale-105 transition duration-300"
