@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.jpg"; // Ensure correct path
+import logo from "../assets/logo.jpg"; // Ensure the path is correct
 
 const Navbar = () => {
   return (
@@ -11,15 +11,15 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Quantanova Logo"
-            className="w-10 h-10 rounded-full object-cover"
+            className="w-8 h-8 md:w-10 md:h-10 rounded-full object-cover"
           />
-          <h1 className="text-xl font-extrabold text-cyan-400 tracking-widest">
+          <h1 className="hidden md:block text-2xl font-extrabold text-cyan-400 tracking-widest">
             Quantanova
           </h1>
         </div>
 
-        {/* Full Menu (Always Visible, Responsive) */}
-        <ul className="flex flex-wrap justify-center space-x-3 sm:space-x-4 md:space-x-6 font-medium text-sm sm:text-base">
+        {/* Navigation Links */}
+        <ul className="flex flex-wrap justify-end gap-3 text-sm sm:text-base md:text-lg font-medium">
           <li><Link to="/" className="hover:text-cyan-300 transition">Home</Link></li>
           <li><Link to="/about" className="hover:text-cyan-300 transition">About</Link></li>
           <li><Link to="/timeline" className="hover:text-cyan-300 transition">Timeline</Link></li>
